@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//Drivers/FLASH/FAT/diskio.c=UTF-8
+encoding//Drivers/FLASH/Inc/w25qxx.h=UTF-8
+encoding//Drivers/FLASH/Src/w25qxx.c=UTF-8
+encoding//Drivers/USB/Inc/SW_UDISK.h=UTF-8
+encoding//Drivers/USB/Inc/ch32v30x_usbhs_device.h=UTF-8
+encoding//Drivers/USB/Inc/usb_desc.h=UTF-8
+encoding//Drivers/USB/Src/SW_UDISK.c=UTF-8
+encoding//Drivers/USB/Src/usb_desc.c=UTF-8
+encoding//Drivers/drivers.h=UTF-8
+encoding//User/main.c=UTF-8
+encoding/CMakeLists.txt=UTF-8

@@ -1,0 +1,31 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "tim6.h": "c",
+        "ch32v307fat.h": "c",
+        "ch32v30x_usbhs_device.h": "c",
+        "ch32v30x_spi.h": "c",
+        "internal_flash.h": "c",
+        "spi2.h": "c",
+        "app.h": "c",
+        "cctype": "cpp",
+        "cfloat": "cpp",
+        "climits": "cpp",
+        "cmath": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "cstdarg": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "type_traits": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "*.tcc": "cpp",
+        "cstdint": "cpp",
+        "typeinfo": "cpp",
+        "*.rh": "cpp",
+        "usbcontrol.h": "c"
+    }
+}
