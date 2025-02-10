@@ -3,12 +3,12 @@ set(CMAKE_SYSTEM_VERSION 1)
 set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 cmake_minimum_required(VERSION 3.20)
 
-# 工具链设置
-#set(TOOLPATH "D:/App_Windows/MounRiver_Studio/Base_File/MounRiver_Studio/toolchain/RISC-V Embedded GCC/bin/riscv-none-embed-")
-set(TOOLPATH "D:/App_Windows/MounRiver_Studio/Base_File/MounRiver_Studio/toolchain/RISC-V Embedded GCC12/bin/riscv-none-elf-")
-
 if(WIN32)
     message(STATUS "Now is windows!")
+
+    # 工具链设置
+    # set(TOOLPATH "D:/App_Windows/MounRiver_Studio/Base_File/MounRiver_Studio/toolchain/RISC-V Embedded GCC/bin/riscv-none-embed-")
+    set(TOOLPATH "D:/App_Windows/MounRiver_Studio/Base_File/MounRiver_Studio/toolchain/RISC-V Embedded GCC12/bin/riscv-none-elf-")
     set(CMAKE_C_COMPILER ${TOOLPATH}gcc.exe)
     set(CMAKE_CXX_COMPILER ${TOOLPATH}g++.exe)
     set(CMAKE_ASM_COMPILER ${TOOLPATH}gcc.exe)
@@ -36,6 +36,9 @@ set(CMAKE_C_STANDARD 11)
 
 set(CMAKE_BUILD_TYPE "Debug")
 
+message("CMAKE_BUILD_TYPE:\t" ${CMAKE_BUILD_TYPE})
+message("Version:\t1.0.0")
+
 # 编译等级
 if("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     message(VERBOSE "Maximum optimization for speed")
@@ -51,7 +54,7 @@ else()
     add_compile_options(-Og -g)
 endif()
 
-#LINK_LIBRARIES(m)
+# LINK_LIBRARIES(m)
 
 # 编译参数 一般不用改
 add_compile_options(-march=rv32imafc -mabi=ilp32f -mcmodel=medany -msmall-data-limit=8 -mno-save-restore)
@@ -61,7 +64,7 @@ add_compile_options(-fmessage-length=0 -fsigned-char -ffunction-sections -fdata-
 add_compile_options(-Wall)
 
 # 宏定义
-#add_definitions(__cplusplus)
+# add_definitions(__cplusplus)
 
 # 头文件路径
 include_directories(
@@ -121,7 +124,7 @@ add_link_options(-T ${LINKER_SCRIPT})
 add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
 
 # 链接静态库
-#如果要用cpp，要把这行注释掉
+# 如果要用cpp，要把这行注释掉
 target_link_libraries(${PROJECT_NAME}.elf -lprintfloat m)
 
 # 输出hex和bin
