@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//CMyLib/Inc/SD.h=UTF-8
 encoding//Drivers/FLASH/FAT/diskio.c=UTF-8
 encoding//Drivers/FLASH/Inc/w25qxx.h=UTF-8
 encoding//Drivers/FLASH/Src/w25qxx.c=UTF-8

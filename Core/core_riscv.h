@@ -53,7 +53,7 @@ typedef __IO uint8_t   vu8;
 
 typedef uint64_t  u64;
 typedef uint32_t  u32;
-typedef uint16_t  uint16_t;
+typedef uint16_t  u16;
 typedef uint8_t   u8;
 
 typedef __IO int64_t  vs64;

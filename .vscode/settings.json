@@ -26,6 +26,9 @@
         "cstdint": "cpp",
         "typeinfo": "cpp",
         "*.rh": "cpp",
-        "usbcontrol.h": "c"
+        "usbcontrol.h": "c",
+        "cmylib.h": "c",
+        "drivers.h": "c",
+        "i2c.h": "c"
     }
 }

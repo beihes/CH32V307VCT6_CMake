@@ -6,8 +6,10 @@
  */
 
 #include "usbControl.h"
+#include "sdCard.h"
 
 uint8_t usbState = DISABLE;
+uint8_t sdState = DISABLE;
 
 uint8_t Key_ControlUSB(void)
 {
@@ -29,5 +31,19 @@ uint8_t Key_ControlUSB(void)
         USBHS_Device_Init(DISABLE);
         usbState = DISABLE;
     }
+    if (getKeyPB03Data()->midTime == 2 && sdState == DISABLE)
+    {
+        printf("sd OPEN!\n");
+        SD_Init();
+        show_sdcard_info();
+        sdState = ENABLE;
+    }
+    else if (getKeyPB03Data()->midTime != 2 && sdState == ENABLE)
+    {
+        printf("sd CLOSE!\n");
+        SD_PowerOFF();
+        sdState = DISABLE;
+    }
+
     return usbState;
 }

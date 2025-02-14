@@ -76,6 +76,7 @@ include_directories(
     Drivers/FLASH/FAT
     Drivers/FLASH/Inc
     Drivers/FLASH
+    Drivers/I2C/Inc
     Drivers/I2C
     Drivers/I2S
     Drivers/Key

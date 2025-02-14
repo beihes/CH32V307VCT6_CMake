@@ -131,7 +131,7 @@ uint8_t Is_Leap_Year(uint16_t year)
 uint8_t RTC_Set(uint16_t syear, uint8_t smon, uint8_t sday, uint8_t hour, uint8_t min, uint8_t sec)
 {
     uint16_t t;
-    u32 seccount = 0;
+    uint32_t seccount = 0;
     if (syear < 1970 || syear > 2099)
         return 1;
     for (t = 1970; t < syear; t++)
@@ -144,13 +144,13 @@ uint8_t RTC_Set(uint16_t syear, uint8_t smon, uint8_t sday, uint8_t hour, uint8_
     smon -= 1;
     for (t = 0; t < smon; t++)
     {
-        seccount += (u32)mon_table[t] * 86400;
+        seccount += (uint32_t)mon_table[t] * 86400;
         if (Is_Leap_Year(syear) && t == 1)
             seccount += 86400;
     }
-    seccount += (u32)(sday - 1) * 86400;
-    seccount += (u32)hour * 3600;
-    seccount += (u32)min * 60;
+    seccount += (uint32_t)(sday - 1) * 86400;
+    seccount += (uint32_t)hour * 3600;
+    seccount += (uint32_t)min * 60;
     seccount += sec;
 
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR | RCC_APB1Periph_BKP, ENABLE);
@@ -173,7 +173,7 @@ uint8_t RTC_Set(uint16_t syear, uint8_t smon, uint8_t sday, uint8_t hour, uint8_
 uint8_t RTC_Alarm_Set(uint16_t syear, uint8_t smon, uint8_t sday, uint8_t hour, uint8_t min, uint8_t sec)
 {
     uint16_t t;
-    u32 seccount = 0;
+    uint32_t seccount = 0;
     if (syear < 1970 || syear > 2099)
         return 1;
     for (t = 1970; t < syear; t++)
@@ -186,13 +186,13 @@ uint8_t RTC_Alarm_Set(uint16_t syear, uint8_t smon, uint8_t sday, uint8_t hour, 
     smon -= 1;
     for (t = 0; t < smon; t++)
     {
-        seccount += (u32)mon_table[t] * 86400;
+        seccount += (uint32_t)mon_table[t] * 86400;
         if (Is_Leap_Year(syear) && t == 1)
             seccount += 86400;
     }
-    seccount += (u32)(sday - 1) * 86400;
-    seccount += (u32)hour * 3600;
-    seccount += (u32)min * 60;
+    seccount += (uint32_t)(sday - 1) * 86400;
+    seccount += (uint32_t)hour * 3600;
+    seccount += (uint32_t)min * 60;
     seccount += sec;
 
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR | RCC_APB1Periph_BKP, ENABLE);
@@ -214,8 +214,8 @@ uint8_t RTC_Alarm_Set(uint16_t syear, uint8_t smon, uint8_t sday, uint8_t hour, 
 uint8_t RTC_Get(void)
 {
     static uint16_t daycnt = 0;
-    u32 timecount = 0;
-    u32 temp = 0;
+    uint32_t timecount = 0;
+    uint32_t temp = 0;
     uint16_t temp1 = 0;
     timecount = RTC_GetCounter();
     temp = timecount / 86400;

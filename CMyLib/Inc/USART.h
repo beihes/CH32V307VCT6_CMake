@@ -9,10 +9,9 @@
 #define CMYLIB_INC_USART_H_
 
 #ifdef __cplusplus
- extern "C" {
+extern "C"
+{
 #endif
-
-
 
 #ifdef __cplusplus
 }

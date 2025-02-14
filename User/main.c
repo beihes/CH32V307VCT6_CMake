@@ -27,7 +27,7 @@
  *
  * @return  none
  */
-//本例程采用YD-CH32V307VCT6开发板
+// 本例程采用YD-CH32V307VCT6开发板
 int main(void)
 {
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
@@ -40,6 +40,12 @@ int main(void)
 
     LED_Init();
     Key_Init();
+    AT24CXX_Init();
+    AT24CXX_Test();
+
+    SD_Pin_Init();
+    SD_Init();
+
     /* The code is initializing the TIM1 timer and the RTC (Real-Time Clock) module. */
     TIM1_Base_Init(65535, SystemCoreClock / 1000000 - 1);
     printf("RTC:%d\n", RTC_Init());

@@ -9,10 +9,12 @@
 #define DRIVERS_DRIVERS_H_
 
 #ifdef __cplusplus
- extern "C" {
+extern "C"
+{
 #endif
 
 #include "flash.h"
+#include "i2c.h"
 #include "key.h"
 #include "led.h"
 #include "rtc.h"
