@@ -350,7 +350,7 @@ extern "C"
     uint8_t SD_ReadDisk(uint8_t *buf, uint32_t sector, uint8_t cnt);
     uint8_t SD_WriteDisk(uint8_t *buf, uint32_t sector, uint8_t cnt);
 
-    void show_sdcard_info(void);
+    void Show_SDCard_Info(void);
 
 #ifdef __cplusplus
 }

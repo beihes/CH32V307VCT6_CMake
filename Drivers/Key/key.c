@@ -40,7 +40,7 @@ void EXTI3_IRQHandler(void)
 {
     if (EXTI_GetITStatus(EXTI_Line3) != RESET)
     {
-        printf("key:%d\n",keyPB03.num);
+        printf("key:%d\n", keyPB03.num);
         keyPB03.startTime = getCalendarObjData()->second;
         while (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_3) == 0)
             ;
@@ -57,6 +57,45 @@ void EXTI3_IRQHandler(void)
         EXTI_ClearITPendingBit(EXTI_Line3);
     }
 }
+
+// uint8_t usbState = DISABLE;
+// uint8_t sdState = DISABLE;
+
+// uint8_t Key_PB03_Event()
+// {
+//     if (getKeyPB03Data()->midTime > 3 && usbState == DISABLE)
+//     {
+//         printf("UDisk is ENABLE!\n");
+//         USBHS_Device_Init(ENABLE);
+//         LED_PIN_GREEN_LOW();
+//         LED_PIN_RED_HIGH();
+//         while (getKeyPB03Data()->midTime > 3)
+//         {
+//         }
+//         LED_PIN_RED_LOW();
+//         usbState = ENABLE;
+//     }
+//     else if (usbState == ENABLE)
+//     {
+//         printf("UDisk is DISABLE!\n");
+//         USBHS_Device_Init(DISABLE);
+//         usbState = DISABLE;
+//     }
+//     if (getKeyPB03Data()->midTime == 2 && sdState == DISABLE)
+//     {
+//         printf("sd OPEN!\n");
+//         SD_Init();
+//         Show_SDCard_Info();
+//         sdState = ENABLE;
+//     }
+//     else if (getKeyPB03Data()->midTime != 2 && sdState == ENABLE)
+//     {
+//         printf("sd CLOSE!\n");
+//         SD_PowerOFF();
+//         sdState = DISABLE;
+//     }
+//     return NONE;
+// }
 
 KeyData *getKeyPB03Data()
 {

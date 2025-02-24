@@ -14,6 +14,7 @@
 
 #include "define.h"
 #include "EXTI.h"
+#include "font.h"
 #include "USART.h"
 
 #ifdef __cplusplus

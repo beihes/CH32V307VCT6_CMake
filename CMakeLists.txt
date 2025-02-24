@@ -34,8 +34,6 @@ project(CH32V307VCT6_CMake C CXX ASM)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 11)
 
-set(CMAKE_BUILD_TYPE "Debug")
-
 message("CMAKE_BUILD_TYPE:\t" ${CMAKE_BUILD_TYPE})
 message("Version:\t1.0.0")
 

@@ -75,7 +75,7 @@ void EXTI9_5_IRQHandler(void)
             }
             else
             {
-                show_sdcard_info();
+                Show_SDCard_Info();
                 sdCardIsIn = 1;
             }
         }
@@ -2163,28 +2163,28 @@ uint8_t SD_WriteDisk(uint8_t *buf, uint32_t sector, uint8_t cnt)
 }
 
 /*********************************************************************
- * @fn      show_sdcard_info
+ * @fn      Show_SDCard_Info
  *
  * @brief   SD Card information.
  *
  * @return  none
  */
-void show_sdcard_info(void)
+void Show_SDCard_Info(void)
 {
     printf("SD Card OK!\r\n");
     switch (SDCardInfo.CardType)
     {
     case SDIO_STD_CAPACITY_SD_CARD_V1_1:
-        printf("Card Type:SDSC V1.1\r\n");
+        printf("Card Type:\tSDSC V1.1\r\n");
         break;
     case SDIO_STD_CAPACITY_SD_CARD_V2_0:
-        printf("Card Type:SDSC V2.0\r\n");
+        printf("Card Type:\tSDSC V2.0\r\n");
         break;
     case SDIO_HIGH_CAPACITY_SD_CARD:
-        printf("Card Type:SDHC V2.0\r\n");
+        printf("Card Type:\tSDHC V2.0\r\n");
         break;
     case SDIO_MULTIMEDIA_CARD:
-        printf("Card Type:MMC Card\r\n");
+        printf("Card Type:\tMMC Card\r\n");
         break;
     }
     printf("Card ManufacturerID:%d\r\n", SDCardInfo.SD_cid.ManufacturerID);

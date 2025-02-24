@@ -26,6 +26,7 @@ typedef struct KeyData
 
 void Key_PB03_Init();
 void EXTI3_IRQHandler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
+uint8_t Key_PB03_Event();
 KeyData* getKeyPB03Data();
 
 void Key_Init();

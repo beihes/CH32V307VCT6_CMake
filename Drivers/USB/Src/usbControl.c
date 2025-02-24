@@ -35,7 +35,7 @@ uint8_t Key_ControlUSB(void)
     {
         printf("sd OPEN!\n");
         SD_Init();
-        show_sdcard_info();
+        Show_SDCard_Info();
         sdState = ENABLE;
     }
     else if (getKeyPB03Data()->midTime != 2 && sdState == ENABLE)

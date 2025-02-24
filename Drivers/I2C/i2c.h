@@ -16,6 +16,7 @@ extern "C"
 #include "cMyLib.h"
 #include "i2cx.h"
 #include "i2cEEPROM.h"
+#include "i2cOLED.h"
 
 #ifdef __cplusplus
 }

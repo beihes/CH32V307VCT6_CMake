@@ -42,6 +42,9 @@ int main(void)
     Key_Init();
     AT24CXX_Init();
     AT24CXX_Test();
+    OLED_Init();
+
+    OLED_ShowString(1, 1, "2343");
 
     SD_Pin_Init();
     SD_Init();
