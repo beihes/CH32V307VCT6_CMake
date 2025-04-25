@@ -24,11 +24,13 @@ extern "C"
     void I2CX_ReadOneByte_8Bit(I2C_TypeDef *I2CX, uint16_t ReadAddr);
     void I2CX_ReadOneByte_16Bit(I2C_TypeDef *I2CX, uint16_t ReadAddr);
     uint8_t I2CX_ReadOneByte_End(I2C_TypeDef *I2CX, DriverAddr driverAddr);
+    uint8_t I2CX_ReadOneByte(I2C_TypeDef *I2CX, DriverAddr driverAddr, uint16_t readAddr);
 
     void I2CX_WriteOneByte_Start(I2C_TypeDef *I2CX, DriverAddr driverAddr);
     void I2CX_WriteOneByte_8Bit(I2C_TypeDef *I2CX, uint16_t writeAddr);
     void I2CX_WriteOneByte_16Bit(I2C_TypeDef *I2CX, uint16_t writeAddr);
     void I2CX_WriteOneByte_End(I2C_TypeDef *I2CX, uint8_t dataToWrite);
+    void I2CX_WriteOneByte(I2C_TypeDef *I2CX, DriverAddr driverAddr, uint16_t writeAddr);
 #ifdef __cplusplus
 }
 #endif

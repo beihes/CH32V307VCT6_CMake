@@ -31,9 +31,9 @@ void AT24CXX_Init(void)
 uint8_t AT24CXX_ReadOneByte(uint16_t ReadAddr)
 {
     I2CX_ReadOneByte_Start(I2C2, 0xA0);
-#if (Address_Lenth == Address_8bit)
+#if (Address_Lenth == AT24CXX_Address_8bit)
     I2CX_ReadOneByte_8Bit(I2C2, ReadAddr);
-#elif (Address_Lenth == Address_16bit)
+#elif (Address_Lenth == AT24CXX_Address_16bit)
     I2CX_ReadOneByte_16Bit(I2C2, ReadAddr);
 #endif
     return I2CX_ReadOneByte_End(I2C2, 0xA0);
@@ -51,9 +51,9 @@ uint8_t AT24CXX_ReadOneByte(uint16_t ReadAddr)
 void AT24CXX_WriteOneByte(uint16_t writeAddr, uint8_t dataToWrite)
 {
     I2CX_WriteOneByte_Start(I2C2, 0xA0);
-#if (Address_Lenth == Address_8bit)
+#if (Address_Lenth == AT24CXX_Address_8bit)
     I2CX_WriteOneByte_8Bit(I2C2, writeAddr);
-#elif (Address_Lenth == Address_16bit)
+#elif (Address_Lenth == AT24CXX_Address_16bit)
     I2CX_WriteOneByte_16Bit(I2C2, writeAddr);
 #endif
     I2CX_WriteOneByte_End(I2C2, dataToWrite);

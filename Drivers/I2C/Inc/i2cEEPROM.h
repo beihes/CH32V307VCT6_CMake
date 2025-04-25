@@ -28,12 +28,12 @@ Steps:
 *******************************************************************************/
 
 /* EERPOM DATA ADDRESS Length Definition */
-#define Address_8bit 0
-#define Address_16bit 1
+#define AT24CXX_Address_8bit 0
+#define AT24CXX_Address_16bit 1
 
 /* EERPOM DATA ADDRESS Length Selection */
-// #define Address_Lenth    Address_8bit
-#define Address_Lenth Address_16bit
+// #define Address_Lenth    AT24CXX_Address_8bit
+#define Address_Lenth AT24CXX_Address_16bit
 
 #define AT24C32 0xA0
 

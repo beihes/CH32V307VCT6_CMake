@@ -22,14 +22,6 @@ extern "C"
 #include "stdlib.h"
 #include "string.h"
 
-#define SPI_FLASH_MOD 0 // 1为SD，0为W25Q64
-
-#if SPI_FLASH_MOD == 1
-#define SPI_SD
-#elif SPI_FLASH_MOD == 0
-#define SPI_W25XXX
-#endif
-
     uint8_t Time_Out_Sec(uint32_t time1, uint32_t *time2, uint8_t midTime);
 
 #ifdef __cplusplus
